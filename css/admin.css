@@ -1,0 +1,181 @@
+.settings_page_odreviewform h1 {
+    margin-bottom: 1em;
+}
+.odrf-intro {
+    margin: 3em auto 0;
+    padding: 1.5em;
+    max-width: 500px;
+    width: 100%;
+    background: #FFF;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 8px;
+    text-align: center;
+}
+.odrf-intro h3 {
+    font-size: 24px;
+}
+.odrf-intro label {
+    font-weight: bold;
+}
+.settings_page_odreviewform .form-wrap input[type="text"],
+.odrf-intro input[type="text"] {
+    font-size: 16px;
+    padding: .5em;
+    border-radius: 3px;
+    width: 100%;
+}
+.settings_page_odreviewform .form-wrap input[type="text"] {
+    font-size: 14px;
+    padding: .4em;
+}
+.location-status .spinner {
+    float: none;
+    margin-top: 0;
+}
+.form-wrap .form-field-group:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.form-wrap .form-field {
+    margin: .75em 0;
+    box-sizing: border-box;
+}
+.form-wrap .form-field + .form-field-left-half,
+.form-wrap .form-field + .form-field-right-half {
+    margin-top: 0;
+}
+.form-wrap .form-field-left-half {
+    float: left;
+    width: 50%;
+    padding-right: 1em;
+}
+.form-wrap .form-field-right-half {
+    float: left;
+    width: 50%;
+    padding-left: 1em;
+}
+.odrf-locations-list li + li {
+    border-top: 1px solid rgba(0,0,0,0.2);
+}
+.inside .dashicons {
+    width: auto;
+    height: auto;
+    font-size: 1.2em;
+    line-height: inherit;
+    vertical-align: middle;
+}
+
+.od-field label {
+    font-weight: bold;
+}
+.od-field textarea,
+.od-field input[type="text"] {
+    font-size: 14px;
+    padding: .4em;
+    border-radius: 3px;
+    width: 100%;
+}
+.od-field textarea {
+    min-height: 200px;
+}
+.od-field-group:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.od-field {
+    margin: 0 0 .75em;
+    box-sizing: border-box;
+}
+.od-field + .od-field-left-half,
+.od-field + .od-field-right-half {
+    margin-top: 0;
+}
+.od-field-inline {
+    display: inline-block;
+    margin: 0;
+}
+.od-field-left-half {
+    float: left;
+    width: 50%;
+    padding-right: 1em;
+}
+.od-field-right-half {
+    float: left;
+    width: 50%;
+    padding-left: 1em;
+}
+.od-field-input {
+    margin-left:-2px;
+}
+.od-field-sub-label {
+    color: #777;
+    font-size: .85em;
+}
+.od-list-repeatable > li {
+    border: 1px solid #eee;
+    display: flex;
+    flex-basis: 100%;
+}
+.od-list-repeatable > li > * {
+    flex: 1;
+}
+.od-list-repeatable > li > .base-0 {
+    flex: 0;
+}
+.od-field-actions button,
+.od-field-container {
+    padding: 6px;
+}
+.od-field-actions {
+    background: #f7f7f7;
+    border-right: 1px solid #eee;
+}
+.od-field-container {
+}
+.od-field-actions button {
+    box-sizing: border-box;
+    line-height: 1em;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #eee;
+}
+.od-field-actions button:focus {
+    background: transparent;
+    outline: none;
+
+}
+.od-field-actions button:hover {
+    cursor: pointer;
+    background: #eee;
+}
+.od-pull-left {
+    float:left;
+}
+.od-pull-right {
+    float:right;
+}
+.od-unfocus {
+    filter: blur(2.5px);
+}
+.od-list-input {
+    margin-right: -10px;
+}
+.od-list-input li {
+    box-sizing: border-box;
+    padding-right: 10px;
+}
+.od-field-half {
+    float: left;
+    width: 50%;
+}
+.odrf-stars {
+    white-space: nowrap;
+}
+.odrf-stars .odrf-star {
+    display: inline-block;
+}
+.odrf-stars .odrf-star + .odrf-star {
+    margin-left: 2px;
+}
