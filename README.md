@@ -7,8 +7,8 @@ Installation
 Clone the repository:
 
 
-	$ git clone https://github.com/ac524/composerpress.git
-	$ cd composerpress
+	$ git clone https://github.com/ac524/od-review-form.git
+	$ cd od-review-form
 	
 Install Composer vendor files:
 
