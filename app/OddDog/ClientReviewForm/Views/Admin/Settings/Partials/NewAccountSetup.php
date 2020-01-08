@@ -50,7 +50,7 @@ class NewAccountSetup extends SettingPageHtmlOutput
                 '<h3>Welcome To Odd Dog Website Reviews!</h3>' .
                 '<p>Please enter your Odd Dog Reviews account code below to<br>get started with collecting reviews on your website.</p>' .
                 $this->settingsForm .
-                '<p>Don\'t have an account code yet? <a href="https://www.odddogmedia.com/reviews/">Register For Free!</a></p>' .
+                '<p>Don\'t have an account code yet? <a href="https://odd.dog/review-app/">Register For Free!</a></p>' .
             '</div>';
     }
 

@@ -9,7 +9,7 @@ class OddDogLinkBack extends HtmlOutput
 
     public function getHtml(): string
     {
-        return '<a href="https://www.odddogmedia.com">Reviews Powered by Odd Dog Media</a>';
+        return '<a href="https://odd.dog">Reviews Powered by Odd Dog Media</a>';
     }
 
 }
