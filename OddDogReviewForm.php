@@ -11,24 +11,9 @@
  * ComposerPress Slug: odreviewform
  */
 
-use OdReviewForm\OddDog\ClientReviewForm\Plugin as OddDogReviewFormPlugin;
-
 if ( version_compare(PHP_VERSION, '7.1.0', '>=') ) {
 
-    $odRFAutoloadFile = __DIR__ . '/vendor/autoload.php';
-
-    if( file_exists( $odRFAutoloadFile ) )
-
-        require_once $odRFAutoloadFile;
-
-    /**
-     * @return OddDogReviewFormPlugin
-     */
-    function get_od_review_form_plugin() {
-
-        return OddDogReviewFormPlugin::setPluginFile( __FILE__ )::instance();
-
-    }
+    require_once __DIR__ .'/plugin-loader.php';
 
     // Fetch the plugin instance to instantiate the class and register all associated components.
     get_od_review_form_plugin();
