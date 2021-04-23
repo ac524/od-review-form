@@ -40,6 +40,8 @@ class PostTypeComponent extends Component
 
     public $showInAdminBar;
 
+    public $showInRest;
+
     public $rewrite = false;
 
     public $capabilityType;

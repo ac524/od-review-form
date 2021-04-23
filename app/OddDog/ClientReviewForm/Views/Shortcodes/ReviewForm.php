@@ -14,6 +14,7 @@ use OdReviewForm\OddDog\ClientReviewForm\Views\Forms\UserReviewForm;
 use OdReviewForm\OddDog\ClientReviewForm\Views\ReviewSubmissionThankYou;
 
 class ReviewForm extends Component
+
 {
 
     protected $id = 'OdClientReviewFormShortcode';

@@ -27,7 +27,9 @@ class ReviewPages extends HtmlOutput
         $pagesConfig = [
             'total' => $this->totalPages(),
             'current' => $this->page,
-            'prev_next' => false
+            'prev_next' => false,
+            'end_size' => 2,
+            'mid_size' => 1
         ];
 
         return

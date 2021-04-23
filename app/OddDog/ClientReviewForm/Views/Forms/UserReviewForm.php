@@ -441,11 +441,11 @@ class UserReviewForm implements HtmlOutputInterface
      */
     protected function maybeLoadPostData() : void
     {
-        if( ! $this->isPost() )
+        if( ! $this->isPost() || is_admin() )
 
             return;
 
-        $this->setData( filter_input_array( INPUT_POST, $this->inputFilters() ) );
+        $this->setData( filter_input_array( INPUT_POST, $this->inputFilters() ) ?: [] );
 
         if( ! empty( $this->data ) && $this->data['odrfIndex'] === $this->index() ) {
 

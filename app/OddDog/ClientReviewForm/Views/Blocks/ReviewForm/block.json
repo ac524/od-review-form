@@ -1,0 +1,14 @@
+{
+	"apiVersion": 2,
+	"name": "odrf/reviewform",
+	"title": "Odd Dog Review Form",
+	"category": "widgets",
+	"icon": "star-filled",
+	"description": "A block to display your Odd Dog review form for gathering new reviews.",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "odrf-reviews",
+	"editorScript": "file:./build/index.js",
+	"editorStyle": "file:./build/index.css"
+}

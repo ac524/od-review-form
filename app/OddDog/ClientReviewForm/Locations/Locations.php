@@ -17,7 +17,7 @@ use OdReviewForm\OddDog\FormsApiClient\ReviewFormsClient;
  *
  * @method Location[] all()
  * @see MapClassCollection::all()
- * @method Location get()
+ * @method Location get($key)
  * @see MapClassCollection::get()
  * @method Location first()
  * @see MapClassCollection::first()
@@ -94,7 +94,6 @@ class Locations extends MapClassCollection
                 ->locations();
 
         $this->failedLoad = ! $locationsRequest->isHealthy();
-
 
         if( $this->failedLoad )
 

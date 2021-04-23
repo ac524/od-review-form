@@ -22,7 +22,7 @@ class RatingStars implements HtmlOutputInterface
     public function getHtml(): string
     {
         return sprintf(
-            '<div class="odrf-stars-wrap"><div class="odrf-stars"%s>%s</div></div>',
+            '<span class="odrf-stars-wrap"><span class="odrf-stars"%s>%s</span></span>',
             $this->starsMaskStyles(),
             implode( '', array_fill(0, ceil($this->rating), $this->getSvgHtml()) )
         );

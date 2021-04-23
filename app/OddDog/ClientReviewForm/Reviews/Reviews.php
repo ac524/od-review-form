@@ -13,12 +13,12 @@ class Reviews extends MapClassCollection
 
     private $lastQuery;
 
-    public function newQueryConfig() : array
+    public function newQueryConfig( $perPage = 10 ) : array
     {
         return [
             'post_type' => $this->postType()->postType,
             'post_status' => 'publish',
-            'posts_per_page' => 10,
+            'posts_per_page' => $perPage,
             'paged' => get_query_var( 'paged', 1 )
         ];
     }

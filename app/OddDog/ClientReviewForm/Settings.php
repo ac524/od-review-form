@@ -6,6 +6,7 @@ namespace OdReviewForm\OddDog\ClientReviewForm;
 
 use OdReviewForm\Core\WpOptions\WpJsonOption;
 use OdReviewForm\Core\WpOptions\WpOption;
+use OdReviewForm\OddDog\FormsApiClient\ReviewFormsClient;
 
 class Settings extends WpJsonOption
 {
@@ -18,7 +19,17 @@ class Settings extends WpJsonOption
 
     public $businessName;
 
+    public $backLinkText;
+
+    public $backLinkUrl;
+
+    public $lastFetchTime = 0;
+
     protected $optionName = 'odrf_settings';
+
+    protected $failedLoad = false;
+
+    private $syncProps = ['backLinkText', 'backLinkUrl'];
 
     /**
      * @param bool $autoload
@@ -51,6 +62,34 @@ class Settings extends WpJsonOption
     public function hasValidCode() : bool
     {
         return $this->hasCode() && $this->isCodeValidated();
+    }
+
+    public function fetch() : self
+    {
+        $settingsRequest =
+            ReviewFormsClient::instance( $this->accountCode, $this->accountToken )
+                ->settings();
+
+        $this->failedLoad = ! $settingsRequest->isHealthy();
+
+        if( $this->failedLoad )
+
+            return $this;
+
+        $data = $settingsRequest->result();
+
+        $this->updateProperties( array_intersect_key( $data, array_flip( $this->syncProps ) ) );
+
+        $this->lastFetchTime = time();
+
+        $this->save();
+
+        return $this;
+    }
+
+    public function isOutOfDate() : bool
+    {
+        return ! $this->lastFetchTime || ($this->lastFetchTime + DAY_IN_SECONDS) < time();
     }
 
 }

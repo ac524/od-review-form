@@ -8,8 +8,11 @@ use OdReviewForm\OddDog\ClientReviewForm\Rest\AdminActionsRoutesComponent;
 use OdReviewForm\OddDog\ClientReviewForm\Reviews\OdReviewsPostType;
 use OdReviewForm\OddDog\ClientReviewForm\Reviews\ReviewAggregatePurgeComponent;
 use OdReviewForm\OddDog\ClientReviewForm\Schema\PrintSchemaComponent;
+use OdReviewForm\OddDog\ClientReviewForm\Views\Blocks\ReviewForm\ReviewFormWpBlockComponent;
+use OdReviewForm\OddDog\ClientReviewForm\Views\Blocks\Reviews\ReviewsWpBlockComponent;
 use OdReviewForm\OddDog\ClientReviewForm\Views\Shortcodes\DisplayReviews;
 use OdReviewForm\OddDog\ClientReviewForm\Views\Shortcodes\ReviewForm;
+use OdReviewForm\OddDog\ClientReviewForm\Views\Widgets\ReviewsWidgetComponent;
 
 class Plugin extends \OdReviewForm\Core\Plugin\Plugin {
 
@@ -22,10 +25,13 @@ class Plugin extends \OdReviewForm\Core\Plugin\Plugin {
         ReviewMetaboxComponent::class,
         ReviewForm::class,
         DisplayReviews::class,
+        ReviewsWidgetComponent::class,
         OdReviewsPostType::class,
         ReviewAggregatePurgeComponent::class,
         AdminActionsRoutesComponent::class,
-        PrintSchemaComponent::class
+        PrintSchemaComponent::class,
+        ReviewsWpBlockComponent::class,
+        ReviewFormWpBlockComponent::class
 	];
 
 	/**

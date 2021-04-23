@@ -103,6 +103,22 @@ class SettingsPageComponent extends  AdminPostTypePageComponent implements Reque
 
         }
 
+        if( ! empty( $_GET['resyncSettings'] ) ) {
+
+            if( $settings->isCodeValidated() ) {
+
+                $settings->fetch();
+
+                add_action('admin_init', function() {
+
+                    wp_redirect( $this->pageUrl() );
+
+                });
+
+            }
+
+        }
+
         $this
             ->addForm( 'GeneralSettings', INPUT_POST, [
                 'accountCode' => [
@@ -172,6 +188,12 @@ class SettingsPageComponent extends  AdminPostTypePageComponent implements Reque
         $settings = Settings::getInstance();
 
         if( $settings->isCodeValidated() ) {
+
+            if( $settings->isOutOfDate() ) {
+
+                $settings->fetch();
+
+            }
 
             $locations = Locations::instance();
 
@@ -304,8 +326,6 @@ class SettingsPageComponent extends  AdminPostTypePageComponent implements Reque
                 $locationsData->fetch();
         }
     }
-
-
 
     public function updateLocations( array $options )
     {

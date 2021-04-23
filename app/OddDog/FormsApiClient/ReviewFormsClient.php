@@ -52,6 +52,27 @@ class ReviewFormsClient {
      * @return Request|null
      * @throws ApiClientException
      */
+    public function settings() : ?Request
+    {
+        return $this->requestAuthenticated( 'account/'. $this->accountCode );
+    }
+
+    /**
+     * @param array $settings
+     * @return Request|null
+     * @throws ApiClientException
+     */
+//    public function updateSettings( array $settings ) : ?Request
+//    {
+//        return $this->requestAuthenticated( 'account/'. $this->accountCode .'/update', [
+//            'settings' => $settings
+//        ], 'POST' );
+//    }
+
+    /**
+     * @return Request|null
+     * @throws ApiClientException
+     */
     public function locations() : ?Request
     {
         return $this->requestAuthenticated( 'account/'. $this->accountCode .'/locations' );
