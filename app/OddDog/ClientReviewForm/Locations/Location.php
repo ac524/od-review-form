@@ -17,6 +17,10 @@ class Location extends CollectionClass
 
     public $address;
 
+    public $backLinkText;
+
+    public $backLinkUrl;
+
     private $isUpdated = false;
 
     public static function idFactory( string $name )

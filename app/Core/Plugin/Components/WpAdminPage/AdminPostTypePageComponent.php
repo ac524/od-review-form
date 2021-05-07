@@ -3,7 +3,9 @@
 namespace OdReviewForm\Core\Plugin\Components\WpAdminPage;
 
 
-abstract class AdminPostTypePageComponent extends AdminPageComponent
+use OdReviewForm\Core\Plugin\Interfaces\RequestDataInterface;
+
+abstract class AdminPostTypePageComponent extends AdminPageComponent implements RequestDataInterface
 {
 
     protected $postType;
