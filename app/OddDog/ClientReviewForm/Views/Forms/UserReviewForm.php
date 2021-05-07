@@ -27,6 +27,8 @@ class UserReviewForm implements HtmlOutputInterface
 
     private $hasSubmission = false;
 
+    private  $location;
+
     private static $count;
 
     /**
@@ -36,6 +38,8 @@ class UserReviewForm implements HtmlOutputInterface
     public function __construct( ?string $location = null )
     {
         self::$count++;
+
+        if( $location ) $this->location = $location;
 
         $this->index = self::$count;
 
@@ -68,9 +72,9 @@ class UserReviewForm implements HtmlOutputInterface
 
 
 
-        if( ! empty( $location ) ) {
+        if( ! empty( $this->location ) ) {
 
-            if( !Locations::instance()->containsKey( $location ) ) {
+            if( !Locations::instance()->containsKey( $this->location ) ) {
 
                 $this->addError( 'location', 'Please provide a valid location from the following list: '. implode( ', ', Locations::instance()->keys() ) );
                 return;
@@ -81,7 +85,7 @@ class UserReviewForm implements HtmlOutputInterface
                 ->addInput([
                     'type' => 'hidden',
                     'name' => 'location',
-                    'value' => $location,
+                    'value' => $this->location,
                     'filterInput' => FILTER_SANITIZE_STRING
                 ]);
 
@@ -186,7 +190,7 @@ class UserReviewForm implements HtmlOutputInterface
 
         $formHtml .= '</form>';
 
-        $formHtml .= '<div class="odrf-footer">'. (new OddDogLinkBack()) .'</div>';
+        $formHtml .= '<div class="odrf-footer">'. (new OddDogLinkBack( $this->location )) .'</div>';
 
         $formHtml .= '</div>';
 

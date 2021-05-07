@@ -13,7 +13,7 @@ class OddDogLinkBack extends HtmlOutput
     /** @var string */
     private $text;
 
-    public function __construct( ?string $locationKey )
+    public function __construct( ?string $locationKey = null )
     {
         $options = $locationKey && Locations::instance()->containsKey( $locationKey ) ? $this->getLocationOptions( $locationKey ) : [ 'url' => "", 'text' => "" ];
 

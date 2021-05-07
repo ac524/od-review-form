@@ -119,7 +119,7 @@ class ReviewsDisplay implements HtmlOutputInterface
         }
 
         $content .=
-            '<p class="odrf-footer">'. (new OddDogLinkBack()) .'</p>'.
+            '<p class="odrf-footer">'. (new OddDogLinkBack($this->location)) .'</p>'.
             '</div>';
 
         return $content;
