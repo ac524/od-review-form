@@ -1,8 +1,6 @@
 <?php
 
-
 namespace OdReviewForm\OddDog\ClientReviewForm\Views\Forms;
-
 
 use OdReviewForm\Core\Interfaces\HtmlOutputInterface;
 use OdReviewForm\Core\Traits\HtmlOutput;
@@ -132,13 +130,13 @@ class UserReviewForm implements HtmlOutputInterface
         }
 
         $this->addInput([
-                'label' => 'Message',
-                'type' => 'textarea',
-                'name' => 'reviewMessage',
-                'placeholder' => 'Tell us about your experience',
-                'required' => true,
-                'filterInput' => FILTER_SANITIZE_STRING
-            ]);
+            'label' => 'Message',
+            'type' => 'textarea',
+            'name' => 'reviewMessage',
+            'placeholder' => 'Tell us about your experience',
+            'required' => true,
+            'filterInput' => FILTER_SANITIZE_STRING
+        ]);
 
         $this->errors = [];
 
@@ -201,11 +199,15 @@ class UserReviewForm implements HtmlOutputInterface
 
     /**
      * @param string $id
-     * @return string
      */
     public function initScript( string $id ) : string
     {
-        return sprintf( '<script type="text/javascript">odrfControls("%s")</script>', $id );
+        if( wp_script_is('odreviewform', 'done') ) {
+            return sprintf( '<script type="text/javascript">odrfControls("%s")</script>', $id );
+        }
+
+        wp_add_inline_script('odreviewform', sprintf( 'odrfControls("%s");', $id ) );
+        return '';
     }
 
     /**
