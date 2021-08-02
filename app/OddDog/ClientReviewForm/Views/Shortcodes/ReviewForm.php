@@ -52,8 +52,8 @@ class ReviewForm extends Component
 
         $queued = true;
 
-        wp_enqueue_style( 'odreviewform', Plugin::instance()->getUrl( 'css/odreviewform.css' ) );
-        wp_enqueue_script( 'odreviewform', Plugin::instance()->getUrl( 'js/odreviewform.js' ) );
+        wp_enqueue_style( 'odreviewform', Plugin::instance()->getUrl( 'css/odreviewform.css' ), [], Plugin::instance()->getVersion() );
+        wp_enqueue_script( 'odreviewform', Plugin::instance()->getUrl( 'js/odreviewform.js' ), [], Plugin::instance()->getVersion() );
     }
 
     public function getContent( $atts ) : string

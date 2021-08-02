@@ -3,7 +3,7 @@
 /**
  * Plugin Name: OddDog Review Form
  * Description: Gather reviews on your website. Automatically syncs with your OddDog review request form.
- * Version: 1.21
+ * Version: 1.22
  * Author: Odd Dog Media
  * Author URI: https://odd.dog/
  * Requires PHP: 7.1
