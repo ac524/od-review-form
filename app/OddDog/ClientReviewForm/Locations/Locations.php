@@ -179,6 +179,8 @@ class Locations extends MapClassCollection
      */
     public function add( string $locationId, array $details ) : self
     {
+        if( empty( $locationId ) ) return $this;
+
         if( $this->containsKey( $locationId ) )
 
             return $this;
